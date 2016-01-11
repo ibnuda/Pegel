@@ -16,8 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.ijauradunbi.pegel.pegel.LoginActivity" android:label="@string/login"> </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/login" >
+        </activity>
+        <activity
+            android:name=".BlankActivity"
+            android:label="@string/title_activity_blank" >
+        </activity>
     </application>
 
 </manifest>

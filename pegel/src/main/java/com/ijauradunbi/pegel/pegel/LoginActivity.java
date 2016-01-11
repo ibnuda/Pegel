@@ -1,6 +1,7 @@
 package com.ijauradunbi.pegel.pegel;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
@@ -56,17 +57,21 @@ public class LoginActivity extends AppCompatActivity {
         String password = emailText.getText().toString();
 
         if (email.equals("ibnu@ganteng.com") && password.equals("asdf")) {
-            new android.os.Handler().postDelayed(
-                    new Runnable() {
-                        @Override
-                        public void run() {
-                            onLoginSuccess();
-                            progressDialog.dismiss();
-                        }
-                    }, 3000
-            );
-
+            Intent intentKosong = new Intent(LoginActivity.this, LoginActivity.class);
+            intentKosong.putExtra("ibnu emang ganteng!", true);
+            finish();
+            startActivity(intentKosong);
         }
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        onLoginSuccess();
+                        progressDialog.dismiss();
+                    }
+                }, 3000
+        );
+
     }
 
     public void onLoginSuccess() {
